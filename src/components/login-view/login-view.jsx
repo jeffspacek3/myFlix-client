@@ -1,9 +1,10 @@
 import { useState } from "react";
+import { Button, Form, Container, Row } from "react-bootstrap";
 
 export const LoginView = ({ onLoggedIn }) => {
   const [user, setUser] = useState(null);
   const [username, setUsername] = useState("");
-const [password, setPassword] = useState("");
+  const [password, setPassword] = useState("");
   const handleSubmit = (event) => {
     // this prevents the default behavior of the form which is to reload the entire page
     event.preventDefault();
@@ -32,24 +33,26 @@ const [password, setPassword] = useState("");
   };
 
   return (
-    <form onSubmit={handleSubmit}>
-      <label>
-        Username:
-        <input
+    <Form>
+      <Form.Group>
+        <Form.Label>Username:</Form.Label>
+        <Form.Control
           type="text"
           value={username}
           onChange={(e) => setUsername(e.target.value)}
         />
-      </label>
-      <label>
-        Password:
-        <input
+        <Form.Label>Password:</Form.Label>
+        <Form.Control
           type="password"
           value={password}
           onChange={(e) => setPassword(e.target.value)}
+          minLength="8"
         />
-      </label>
-      <button type="submit">Submit</button>
-    </form>
+
+        <form onSubmit={handleSubmit}>
+          <button type="submit">Submit</button>
+        </form>
+      </Form.Group>
+    </Form>
   );
 };
