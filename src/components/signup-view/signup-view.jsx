@@ -17,7 +17,7 @@ export const SignupView = () => {
       Birthday: birthday,
     };
 
-    fetch("SIGNUP_URL", {
+    fetch("https://cinemark-movie-flix-4533a3ab9445.herokuapp.com/users", {
       method: "POST",
       body: JSON.stringify(data),
       headers: {

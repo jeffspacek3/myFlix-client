@@ -9,7 +9,7 @@ export const LoginView = ({ onLoggedIn }) => {
     // this prevents the default behavior of the form which is to reload the entire page
     event.preventDefault();
     // sends token to MainView
-    fetch("https://cinemark-movie-flix-4533a3ab9445.herokuapp.com//login", {
+    fetch("https://cinemark-movie-flix-4533a3ab9445.herokuapp.com/login", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -33,7 +33,7 @@ export const LoginView = ({ onLoggedIn }) => {
   };
 
   return (
-    <Form>
+    <Form onSubmit={handleSubmit}>
       <Form.Group>
         <Form.Label>Username:</Form.Label>
         <Form.Control
