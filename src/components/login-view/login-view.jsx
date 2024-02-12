@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { Button, Form, Container, Row } from "react-bootstrap";
+import { Button, Form, Col, Container, Row } from "react-bootstrap";
 
 export const LoginView = ({ onLoggedIn }) => {
   const [user, setUser] = useState(null);
@@ -48,10 +48,9 @@ export const LoginView = ({ onLoggedIn }) => {
           onChange={(e) => setPassword(e.target.value)}
           minLength="8"
         />
-
-        <form onSubmit={handleSubmit}>
-          <button type="submit">Submit</button>
-        </form>
+        <Button variant="primary" type="submit">
+          Submit
+        </Button>
       </Form.Group>
     </Form>
   );

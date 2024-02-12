@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { Form, Container, Row, Col } from "react-bootstrap";
+import { Form, Button} from "react-bootstrap";
 
 export const SignupView = () => {
   const [username, setUsername] = useState("");
@@ -65,11 +65,10 @@ export const SignupView = () => {
           onChange={(e) => setBirthday(e.target.value)}
           required
         />
+        <Button variant="primary" type="submit">
+          Submit
+        </Button>
       </Form.Group>
-
-      
-        <button type="submit">Submit</button>
-      
     </Form>
   );
 };
