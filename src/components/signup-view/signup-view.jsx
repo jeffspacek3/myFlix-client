@@ -1,11 +1,12 @@
 import { useState } from "react";
+import { Form, Button} from "react-bootstrap";
 
 export const SignupView = () => {
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
   const [email, setEmail] = useState("");
   const [birthday, setBirthday] = useState("");
-  
+
   const handleSubmit = (event) => {
     event.preventDefault();
 
@@ -16,7 +17,7 @@ export const SignupView = () => {
       Birthday: birthday,
     };
 
-    fetch("SIGNUP_URL", {
+    fetch("https://cinemark-movie-flix-4533a3ab9445.herokuapp.com/users", {
       method: "POST",
       body: JSON.stringify(data),
       headers: {
@@ -33,45 +34,41 @@ export const SignupView = () => {
   };
 
   return (
-    <form onSubmit={handleSubmit}>
-      <label>
-        Username:
-        <input
+    <Form>
+      <Form.Group>
+        <Form.Label>Username:</Form.Label>
+        <Form.Control
           type="text"
           value={username}
           onChange={(e) => setUsername(e.target.value)}
           required
           minLength="3"
         />
-      </label>
-      <label>
-        Password:
-        <input
+        <Form.Label>Password:</Form.Label>
+        <Form.Control
           type="password"
           value={password}
           onChange={(e) => setPassword(e.target.value)}
           required
         />
-      </label>
-      <label>
-        Email:
-        <input
+        <Form.Label>Email:</Form.Label>
+        <Form.Control
           type="email"
           value={email}
           onChange={(e) => setEmail(e.target.value)}
           required
         />
-      </label>
-      <label>
-        Birthday:
-        <input
+        <Form.Label>Birthday:</Form.Label>
+        <Form.Control
           type="date"
           value={birthday}
           onChange={(e) => setBirthday(e.target.value)}
           required
         />
-      </label>
-      <button type="submit">Submit</button>
-    </form>
+        <Button variant="primary" type="submit">
+          Submit
+        </Button>
+      </Form.Group>
+    </Form>
   );
 };
