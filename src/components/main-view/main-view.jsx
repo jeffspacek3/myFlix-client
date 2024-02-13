@@ -3,7 +3,9 @@ import { MovieCard } from "../movie-card/movie-card";
 import { MovieView } from "../movie-view/movie-view";
 import { LoginView } from "../login-view/login-view";
 import { SignupView } from "../signup-view/signup-view";
-import { Button, Form, Container, Row, Col} from "react-bootstrap";
+import { NavigationBar} from "../navigation-bar/navigation-bar";
+import { Container, Row, Col} from "react-bootstrap";
+import { BrowserRouter, Routes, Route, NavBar } from "react-router-dom";
 
 export const MainView = () => {
   const [movies, setMovies] = useState([]);
@@ -37,6 +39,17 @@ export const MainView = () => {
   if (!user) {
     return (
       <>
+      <Container>
+        <BrowserRouter>
+        <NavigationBar></NavigationBar>
+        
+        
+        
+        </BrowserRouter>
+
+
+
+      </Container>
         <Container style={{ border: "1px solid red" }}>
           <Row>
             <Col className="mb-5" key={movies.id} md={3}>
