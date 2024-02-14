@@ -38,6 +38,7 @@ export const MainView = () => {
     return (
       <>
         <BrowserRouter>
+        
           <Row className="justify-content-md-center">
             <Routes>
               <Route
