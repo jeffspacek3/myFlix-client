@@ -1,10 +1,10 @@
-import { Navbar, Container, Nav } from "react-bootstrap";
-import { Link, BrowserRouter } from "react-router-dom";
+import React, { useState } from "react";
+import { Navbar, Container, Nav, Form, Button } from "react-bootstrap";
+import { Link } from "react-router-dom";
 
-export const NavigationBar = ({ user, onLoggedOut, token }) => {
+export const NavigationBar = ({ user, onLoggedOut, token, }) => {
 
   return (
-    <BrowserRouter>
     <Navbar bg="light" expand="lg">
       <Container>
         <Navbar.Brand as ={Link} to="/">
@@ -40,6 +40,5 @@ export const NavigationBar = ({ user, onLoggedOut, token }) => {
         </Navbar.Collapse>
       </Container>
     </Navbar>
-    </BrowserRouter>
   );
 };
