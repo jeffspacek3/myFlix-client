@@ -6,6 +6,17 @@
   padding: 4px 12px;
 }
 
+.similar-movies-img {
+  height: 400px;
+}
+
+.similar-movies-img img {
+  object-fit: fill;
+  object-position: 25% 25%;
+  width: 100%;
+  height: 250px;
+}
+
 :root, [data-bs-theme="light"] {
   --bs-blue: #0d6efd;
   --bs-indigo: #6610f2;
