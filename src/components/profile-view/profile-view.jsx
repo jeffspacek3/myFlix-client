@@ -25,6 +25,7 @@ export const ProfileView = ({ user, onUserUpdate, onDeregister }) => {
 
   return (
     <div>
+      <UserInfo name={user.Username} email={user.Email}></UserInfo>
       <h2>User Profile</h2>
       <Form>
         <Form.Group controlId="formUsername">

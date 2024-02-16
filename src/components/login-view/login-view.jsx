@@ -9,7 +9,7 @@ export const LoginView = ({ onLoggedIn }) => {
   const handleSubmit = (event) => {
     // this prevents the default behavior of the form which is to reload the entire page
     event.preventDefault();
-    let data = { Username, Password: password }
+    let data = { Username: username, Password: password }
     // sends token to MainView
     fetch("https://cinemark-movie-flix-4533a3ab9445.herokuapp.com/login", {
       method: "POST",
